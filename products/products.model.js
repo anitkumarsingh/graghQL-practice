@@ -17,6 +17,18 @@ const getAllProducts = () => {
 	return products;
 };
 
+const getProductByPrice = (min, max) => {
+	return products.filter((product) => {
+		return product.price >= min && product.price <= max;
+	});
+};
+
+getProductById =(id) =>{
+  console.log('asdas',id,products.filter(product=>{product.id == id.toLowerCase()}))
+  return products.filter(product=>{product.id === id.toLowerCase()})
+}
 module.exports = {
-	getAllProducts
+	getAllProducts,
+  getProductByPrice,
+  getProductById
 };
