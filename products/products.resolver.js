@@ -2,7 +2,8 @@ const {
 	getAllProducts,
 	getProductByPrice,
 	getProductById,
-	addNewProduct
+	addNewProduct,
+	addReviews
 } = require('./products.model');
 
 module.exports = {
@@ -22,6 +23,10 @@ module.exports = {
 		addProduct: (_, args) => {
 			const { id, description, price } = args;
 			return addNewProduct(id, description, price);
+		},
+		addProductReview:(_,args)=>{
+			const { id, rating, comments } = args;
+			return addReviews(id, rating, comments);
 		}
 	}
 };

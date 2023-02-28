@@ -5,6 +5,7 @@ type Query {
 }
 type Mutation{
 	addProduct(id:ID!,description:String!,price:Float!):Product
+	addProductReview(id:ID!,rating:Int!,comments:String):Review
 }
 type Product {
 	id: ID!
