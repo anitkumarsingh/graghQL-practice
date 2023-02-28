@@ -3,7 +3,9 @@ type Query {
   productsByPrice(min:Float!,max:Float!):[Product],
   productById(id:ID):Product
 }
-
+type Mutation{
+	addProduct(id:ID!,description:String!,price:Float!):Product
+}
 type Product {
 	id: ID!
 	name: String!

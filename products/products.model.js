@@ -3,13 +3,15 @@ const products = [
 		id: 'redshoe',
 		name: 'Red Shoe',
 		description: 'Red shoe description here...',
-		price: 34.54
+		price: 34.54,
+		reviews:[]
 	},
 	{
 		id: 'blueshoe',
 		name: 'Blue Shoes',
 		description: 'Blue shoe description here...',
-		price: 54.54
+		price: 54.54,
+		reviews:[]
 	}
 ];
 
@@ -23,12 +25,24 @@ const getProductByPrice = (min, max) => {
 	});
 };
 
-getProductById =(id) =>{
+const getProductById =(id) =>{
   console.log('asdas',id,products.filter(product=>{product.id == id.toLowerCase()}))
   return products.filter(product=>{product.id === id.toLowerCase()})
 }
+const addNewProduct = (id,description,price)=>{
+	const newProduct ={
+		id,
+		description,
+		price,
+		reviews:[]
+	}
+	products.push(newProduct);
+	return newProduct;
+}
+
 module.exports = {
 	getAllProducts,
   getProductByPrice,
-  getProductById
+  getProductById,
+	addNewProduct
 };
